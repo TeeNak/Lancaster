@@ -1,0 +1,39 @@
+@use '~@angular/material' as mat;
+@import "~@angular/material/theming";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@include mat.core();
+
+@import "themes/default-theme.scss";
+@import "themes/light-theme.scss";
+@import "themes/black-theme.scss";
+
+@import "app/core/sidenav/sidenav.component";
+
+@mixin custom-components-theme($theme) {
+  @include sidenav-theme($theme);
+}
+
+@include mat.all-component-themes($app-theme);
+@include custom-components-theme($app-theme);
+
+.default-theme {
+  @include mat.all-component-themes($app-theme);
+  @include custom-components-theme($app-theme);
+}
+
+.light-theme {
+  @include mat.all-component-themes($app-light-theme);
+  @include custom-components-theme($app-light-theme);
+}
+
+.black-theme {
+  @include mat.all-component-themes($app-black-theme);
+  @include custom-components-theme($app-black-theme);
+}
+
+// Default styles
+body {
+  margin: 0;
+  padding: 0;
+}

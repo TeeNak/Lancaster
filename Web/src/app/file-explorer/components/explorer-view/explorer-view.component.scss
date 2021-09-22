@@ -1,0 +1,57 @@
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.tool-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.tool-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.mat-button-base {
+  min-width: 5rem;
+}
+
+
+table {
+  width: 100%;
+}
+
+.mat-column-type {
+  word-wrap: break-word;
+  white-space: unset;
+  flex: 0 0 3rem;
+  width: 3rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-name {
+  word-wrap: break-word;
+  white-space: unset;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.mat-column-action {
+  flex: 0 0 2rem;
+  width: 2rem;
+  justify-content: flex-end;
+}

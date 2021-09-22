@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>ファイルアイテムの追加</h1>
+<div mat-dialog-content>
+  <form [formGroup]="addFileItemGroup"  class="add-file-item-form">
+
+    <input hidden #fileInput type="file" id="file"
+        (change)="onFileChange($event)">
+    <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+
+    <p class="file-name" *ngIf="!file; else fileName">ファイルが選択されていません</p>
+    <ng-template #fileName>
+      <p class="file-name">{{ file?.name }}</p>
+    </ng-template>
+
+    <mat-form-field class="file-item-name-field">
+      <mat-label>ファイルアイテムの名称を入力してください</mat-label>
+      <!-- type="search" is set to prevent autocomplete -->
+      <input matInput class="input-file-item-name"
+        formControlName="name"
+        type="search" autocomplete="nope" required>
+      <mat-error *ngIf="checkError('name', 'required')">Name is required</mat-error>
+    </mat-form-field>
+
+
+  </form>
+
+  <div class="bottom-spacer"></div>
+
+  <p class="progress" *ngIf="percentDone>0">{{percentDone}}% uploaded</p>
+  <textarea matInput class="error-message" *ngIf="errorMessage">{{errorMessage}}</textarea>
+
+
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button (click)="onOkClick()" cdkFocusInitial>追加</button>
+  <button mat-stroked-button (click)="onCancelClick()">キャンセル</button>
+</div>
